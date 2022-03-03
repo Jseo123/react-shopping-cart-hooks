@@ -185,29 +185,5 @@ function NewProductForm({ saveNewProduct }) {
     </>
   );
 }
-// class NewProductForm extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       submitted: false,
-//     };
-
-//     this.setSubmitted = this.setSubmitted.bind(this);
-//   }
-
-//   setSubmitted() {
-//     setTimeout(() => {
-//       this.setState({
-//         submitted: true,
-//       });
-//     }, 500);
-//   }
-
-//   render() {
-//     const { submitted } = this.state;
-//     const { saveNewProduct } = this.props;
-
-//   }
-// }
 
 export default NewProductForm;
