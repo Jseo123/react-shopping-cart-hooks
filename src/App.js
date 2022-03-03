@@ -181,7 +181,8 @@ function App() {
   }
 
   function saveNewProduct(newProduct) {
-    setProducts([newProduct, ...products]);
+    setProducts((prevState) => [newProduct, ...prevState]);
+    // setProducts([newProduct, ...products]);
     // newProductFormOpen: !prevState.newProductFormOpen,
   }
 
@@ -212,7 +213,7 @@ function App() {
         path="/new-product"
         exact
         render={(routeProps) => (
-          <NewProduct {...routeProps} saveNewProduct={saveNewProduct()} />
+          <NewProduct {...routeProps} saveNewProduct={saveNewProduct} />
         )}
       />
     </BrowserRouter>
