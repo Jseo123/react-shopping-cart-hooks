@@ -39,14 +39,13 @@ function buildNewCartItem(cartItem) {
 function App() {
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-  const [isLoading, setIsLoading] = useState([false]);
+  const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [loadingError, setLoadingError] = useState(null);
 
   useEffect(() => {
     const prevItems = loadLocalStorageData();
     if (!prevItems) {
-      console.log("No prev items");
       setIsLoading(true);
       api
         .getProducts()
@@ -95,7 +94,8 @@ function App() {
       return;
     }
     const updatedProduct = buildNewCartItem(foundProduct);
-    setCartItems([...cartItems, updatedProduct]);
+    // setCartItems([...cartItems, updatedProduct]);
+    setCartItems((prevState) => [...prevState, updatedProduct]);
   }
 
   function handleChange(event, productId) {
